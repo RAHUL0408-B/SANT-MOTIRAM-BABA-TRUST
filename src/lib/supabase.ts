@@ -1,8 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
 
+// ✅ Load environment variables (must start with VITE_)
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+// ✅ Add validation to prevent runtime crash
+if (!supabaseUrl) {
+  console.error('❌ Missing environment variable: VITE_SUPABASE_URL');
+  throw new Error('VITE_SUPABASE_URL is required');
+}
+
+if (!supabaseAnonKey) {
+  console.error('❌ Missing environment variable: VITE_SUPABASE_ANON_KEY');
+  throw new Error('VITE_SUPABASE_ANON_KEY is required');
+}
+
+// ✅ Create Supabase client
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: false,
