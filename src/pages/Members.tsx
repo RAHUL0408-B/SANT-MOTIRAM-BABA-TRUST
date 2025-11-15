@@ -76,6 +76,7 @@ export const Members: React.FC = () => {
     }
   };
 
+  // ✅ UPDATED CSV EXPORT FUNCTION – UTF-8 + BOM (fix Marathi/Hindi)
   const downloadCSV = () => {
     const headers = [
       'Joining Date',
@@ -89,22 +90,24 @@ export const Members: React.FC = () => {
       'Notes',
     ];
 
-    const csvContent = [
-      headers.join(','),
-      ...filteredMembers.map((m) =>
-        [
-          m.joining_date,
-          m.full_name,
-          m.village,
-          m.post || '',
-          m.taluka || '',
-          m.district || '',
-          m.state || '',
-          m.pincode || '',
-          (m.notes || '').replace(/,/g, ';'),
-        ].join(',')
-      ),
-    ].join('\n');
+    const csvContent =
+      '\uFEFF' + // 👈 BOM add kiya – ye line sabse important hai
+      [
+        headers.join(','),
+        ...filteredMembers.map((m) =>
+          [
+            m.joining_date,
+            m.full_name,
+            m.village,
+            m.post || '',
+            m.taluka || '',
+            m.district || '',
+            m.state || '',
+            m.pincode || '',
+            (m.notes || '').replace(/,/g, ';'),
+          ].join(',')
+        ),
+      ].join('\n');
 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
@@ -129,7 +132,9 @@ export const Members: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-800">{t('member.membersList')}</h1>
+          <h1 className="text-3xl font-bold text-gray-800">
+            {t('member.membersList')}
+          </h1>
           <p className="text-gray-600 mt-1">
             {t('member.totalMembers')}: {filteredMembers.length}
           </p>
