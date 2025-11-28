@@ -41,7 +41,10 @@ export interface Member {
   district?: string;
   state?: string;
   pincode?: string;
+<<<<<<< HEAD
   mobile?: string;
+=======
+>>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
   notes?: string;
   added_by: string;
   created_at: string;

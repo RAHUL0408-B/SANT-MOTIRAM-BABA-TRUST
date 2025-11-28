@@ -15,9 +15,12 @@ export const translations = {
       loading: 'लोड होत आहे...',
       error: 'त्रुटी',
       success: 'यश',
+<<<<<<< HEAD
       selectDistrict: 'जिल्हा निवडा',
       selectTaluka: 'तालुका निवडा',
       selectVillage: 'गाव निवडा',
+=======
+>>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
     },
     nav: {
       dashboard: 'डॅशबोर्ड',
@@ -89,7 +92,11 @@ export const translations = {
       stateName: 'महाराष्ट्र',
       specialEvents: 'विशेष कार्यक्रम',
       event1: 'गुरु पौर्णिमा उत्सव',
+<<<<<<< HEAD
       event2: 'वार्षिक उत्सव',
+=======
+      event2 : 'वार्षिक उत्सव',
+>>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
       footerText1: '|| श्री संत विदेही मोतिराम बाबा ||',
       footerText2: '|| श्री संत अमररत्न तवाडे बाबा ||',
     },
@@ -116,9 +123,12 @@ export const translations = {
       loading: 'Loading...',
       error: 'Error',
       success: 'Success',
+<<<<<<< HEAD
       selectDistrict: 'Select District',
       selectTaluka: 'Select Taluka',
       selectVillage: 'Select Village',
+=======
+>>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
     },
     nav: {
       dashboard: 'Dashboard',
