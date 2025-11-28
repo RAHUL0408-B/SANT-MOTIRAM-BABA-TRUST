@@ -20,6 +20,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const t = (key: string): string => {
     const keys = key.split('.');
+<<<<<<< HEAD
+    let value: unknown = translations[language];
+
+    for (const k of keys) {
+      if (typeof value === 'object' && value !== null) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return (typeof value === 'string' ? value : key) || key;
+=======
     let value: any = translations[language];
 
     for (const k of keys) {
@@ -27,6 +40,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
 
     return value || key;
+>>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
   };
 
   return (
