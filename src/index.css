@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 
 @layer base {
   body {
@@ -12,5 +11,3 @@
 .glass-effect {
   @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
-=======
->>>>>>> ee7e979468e748e7a9ae8d267be4c7b7a55e2e2c
